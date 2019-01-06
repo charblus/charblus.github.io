@@ -3,6 +3,7 @@ title: Serverless services -- 无服务器服务
 categories:
   - 前端
 comments: false
+abbrlink: 60926
 date: 2018-12-27 02:15:54
 img:
 ---
@@ -32,8 +33,8 @@ img:
 
 
 
-* 国外  firebase
-* 国内  阿里百川  友盟
+* 国外:  firebase
+* 国内:  阿里百川  友盟
 
 
 文章

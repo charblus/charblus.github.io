@@ -33,3 +33,16 @@ $ git config --global user.email "charblus7582@gmail.com"
 $ ssh-keygen -t rsa -C “email@email.com”
 ```
 > 按3个回车，密码为空； 如果不执行第一步或没有删除：第一个回车后会出现coverage 提示你是否覆盖文件 yes/no；最后得到了两个文件：id_rsa和id_rsa.pub
+
+### git-flow 
+> git-flow 是一个 git 扩展集，按 Vincent Driessen 的分支模型提供高层次的库操作
+[git-flow 备忘清单](http://danielkummer.github.io/git-flow-cheatsheet/index.zh_CN.html)
+
+### git merge 与 git rebase
+* git merge 和 git rebase 都是将远程分支与本地分支合并的一种方法，git merge 会生成一个新的节点，例如A和B都位于同一个HEAD，A提交了2个commit C1和C2，B 提交了2个commit C3和C4，git merge的结果是在C3和C4之后合并生成C5，这样提交历史比较清晰，但多了一个C5
+* 假设A已经将C1和C2 push到了远程分支，那么B 使用git rebase则会将C3和C4缓存到.git/rebase中，恢复到之前的状态，更新C1和C2，然后再将C3和C4作为补丁应用到C2的状态上。结果如下：
+原始状态 ` ->C1->C2->C3'->C4' `，C3'和C4'为git 根据C3和C4生成的补丁，log是一条直线，而且没有多余的C5，但是平行信息丢失。
+
+
+### 参考
+[廖雪峰git教程](https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)
