@@ -16,6 +16,7 @@ img:
 > windows 安装nvw-windows 使用nvm工具； 
 
 #### windows使用nvm-noinstall.zip安装
+> nvm-noinstall.zip 这个是绿色免安装版本，但是使用之前需要配置
 1. [nvm-windows 下载](https://github.com/coreybutler/nvm-windows/releases) 
  下载最新版本 Assets下 nvm-noinstall.zip文件
 
