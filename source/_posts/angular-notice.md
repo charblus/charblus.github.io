@@ -87,6 +87,7 @@ ng new project-name
 4. 生成管道(原1.x中过滤器) `ng g p pipe-name`
 
 5. 生成指令 `ng g d directive-name`
+   指令分 属性型指令和结构型指令
 
 6. 生成class `ng g cl class-name` class-mame一般首字母大写，驼峰
 
