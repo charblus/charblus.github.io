@@ -1,5 +1,5 @@
 ---
-title: angular-notice
+title: angular6开发不完全笔记（一）
 categories:
   - 前端
   - angular7
@@ -75,6 +75,8 @@ ng new project-name
 + `ng g c component-name` 生成在src下全局组件
 + `ng g c module-name/component-name` 组件生成在某模块下src下，并声明注册该模块
 + `ng g c path/component-name` 组件生成在项目path路径下，默认注册父模块，由父模块决定是否是全局组件还是某模块组件；
+
+[禁止生成spec.ts文件](https://www.itsvse.com/thread-5196-1-1.html)
 
 2. 生成模块 `ng g m module-name` 同上
 其他参数

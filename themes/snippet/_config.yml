@@ -59,9 +59,8 @@ jsonContent:
 ## 网站公告设置
 notification: |-
             <p>
-                主题下载：<a href="https://github.com/shenliyang/hexo-theme-snippet" title="fork me" target="_blank">Snippet主题</a> <br/>
-                主题使用：<a href="https://github.com/shenliyang/hexo-theme-snippet/blob/master/README.md#常见问题" title="" target="_blank">常见使用问题</a> <br/>
-                支持主题：<a href="https://github.com/shenliyang/hexo-theme-snippet/stargazers">Star一下</a>
+              博客项目版本管理dev brach<br/>
+              发布持续化管理master branch <br/>
             </p>
 
 ## 社交设置
@@ -74,10 +73,10 @@ social:
    href: mailto:charblus7582@gmail.com
  - name: 联系QQ
    icon: qq
-   href: /
+   href: tencent://message/?Site=baidu.com&uin=1035602651&Menu=yes
  - name: 微信
    icon: weixin
-   href: /
+   href: weixin://yc18334787582
  - name: QQ群
    icon: users
    href: /

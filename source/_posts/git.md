@@ -1,5 +1,5 @@
 ---
-title: git
+title: git基本配置及使用
 categories:
   - 工具
   - 前端

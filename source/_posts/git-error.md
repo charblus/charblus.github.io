@@ -1,5 +1,5 @@
 ---
-title: 经查 git使用报错及解决办法
+title: 经查-- git使用报错及解决办法
 categories:
   - git
   - 工具

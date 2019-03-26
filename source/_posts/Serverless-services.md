@@ -1,7 +1,7 @@
 ---
 title: Serverless services -- 无服务器服务
 categories:
-  - 前端
+  - 后端
 comments: false
 abbrlink: 60926
 date: 2018-12-27 02:15:54

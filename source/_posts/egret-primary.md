@@ -1,5 +1,5 @@
 ---
-title: egret-primary
+title: Egret引擎开发基础（一）
 categories:
   - Egret
   - 分类2

@@ -1,5 +1,5 @@
 ---
-title: Hexo blog 
+title: Hexo blog使用指南
 categories:
   - 前端
 tags:

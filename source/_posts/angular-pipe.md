@@ -1,5 +1,5 @@
 ---
-title: angular-pipe
+title: ngular6开发不完全笔记（一）-- 管道
 categories:
   - 前端
   - angular
