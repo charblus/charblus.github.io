@@ -1,0 +1,366 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Charblus-blog">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://yoursite.com">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>angular6开发不完全笔记（一） | Charblus-blog</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="Charblus-blog" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="CharBlus">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                <h2> 生活如此多娇 </h2>
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://yoursite.com">Charblus-blog</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/前端/"><i class="fa "></i>前端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/后端/"><i class="fa "></i>后端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="angular6开发不完全笔记（一）">
+            
+	            angular6开发不完全笔记（一）
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/angular7">
+            angular7
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/前端" title="前端">
+                        前端
+                    </a>
+                
+                    <a href="/tags/angular" title="angular">
+                        angular
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2019/01/07</span>
+        </span>
+        
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h3 id="新建项目"><a href="#新建项目" class="headerlink" title="新建项目"></a>新建项目</h3><p>请在终端/控制台窗口中运行  <code>ng -v</code> 命令。 确定您已安装@angular/cli<br>if没有执行 <code>npm install -g @angular/cli</code> 全局安装 Angular CLI。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ng new project-name</span><br></pre></td></tr></table></figure>
+<p>就具体项目开发前调研技术栈追加相关参数</p>
+<ul>
+<li><p>样式style 如 <code>--style=scss</code>  value值可以是（css | scss | sass | less | stylus ）等</p>
+</li>
+<li><p>项目中使用路由routing 如 <code>--routing</code> 生成routing module</p>
+</li>
+<li><p>前缀 prefix 如 <code>--prefix</code> 或 <code>-p</code>  默认为app,参数自定义  比如 <code>--prefix=wn</code></p>
+</li>
+</ul>
+<p>后话</p>
+<blockquote>
+<p>angular.json 文件中 <code>&quot;prefix&quot;: &quot;app&quot;</code>, 会更改为<code>&quot;prefix&quot;: &quot;wn&quot;</code><br> tslint验证规则 项目中所有的组件前缀都改为<code>wn</code>开头的 index.html文件<code>&lt;app-root&gt;&lt;/app-root&gt;</code>变为<code>&lt;wn-root&gt;&lt;wn-root&gt;</code><br>所有 <code>ng g c component-name</code> 生成的组件 prefix默认时使用<code>&lt;app-componet-name&gt;&lt;/app-componet-name&gt;</code> 自定义前缀后 <code>&lt;wn-componet-name&gt;&lt;/wn-componet-name&gt;</code></p>
+</blockquote>
+<p>#####综合上述 <code>ng new project-name --style=scss --routing --prefix=wn</code></p>
+<p>更多参数参考 <a href="https://github.com/angular/angular-cli/wiki/new" target="_blank" rel="noopener">ng new</a></p>
+<h3 id="启动项目"><a href="#启动项目" class="headerlink" title="启动项目"></a>启动项目</h3><p><code>ng serve</code> 或者 <code>npm run start</code></p>
+<ul>
+<li>开发环境项目如开始对接接口需要配置本地代理 </li>
+</ul>
+<ol>
+<li><p>一般在根目录下添加proxy.config.json文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;/api&quot;: &#123;</span><br><span class="line">    &quot;target&quot;: &quot;http://xxx.xxx.com&quot;,</span><br><span class="line">    &quot;secure&quot;: false,</span><br><span class="line">    // &quot;logLevel&quot;:&quot;debug&quot;,</span><br><span class="line">    &quot;changeOrigin&quot;: true,</span><br><span class="line">    &quot;pathRewrite&quot;:&#123;</span><br><span class="line">      &quot;^/api&quot;:&quot;&quot;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>文件package.json中scripts 下 start的value值<code>ng serve --proxy-config proxy.config.json</code>   或者在angular.json 中  serve下 options添加属性 <code>&quot;proxyConfig&quot;：&quot;proxy.config.json&quot;</code></p>
+</li>
+</ol>
+<blockquote>
+<p>ng serve 其他参数</p>
+<ul>
+<li>接口默认4200 <code>--port 4201</code></li>
+<li>启动时自动打开浏览器 <code>--open</code> 简写<code>-o</code></li>
+<li>用host指定运行主机 <code>--host 0.0.0.0</code> 或<code>--public-host 192.168.1.111</code> 指定浏览器客户端将使用的URL</li>
+<li>正在生成的应用程序的基URL <code>--base-href /admin/</code>或者 <code>--base-href http://www.example.com/</code>  相当于index.html添加<base>html标签  属性href规定页面中所有相对链接的基准 URL。 如 <code>&lt;base href=&quot;http://www.example.com/&quot;&gt;</code> 注：参数值后面一定要多个 <code>/</code> 结尾，否则无效</li>
+</ul>
+</blockquote>
+<p>#####综合上述1（未对接） <code>ng serve --port 4201 --open</code></p>
+<p>#####综合上述2 <code>ng serve --proxy-config proxy.config.json --host 0.0.0.0 --port 4201 --open</code></p>
+<p>更多参数参考 <a href="https://github.com/angular/angular-cli/wiki/serve" target="_blank" rel="noopener">ng serve</a></p>
+<h3 id="项目开发"><a href="#项目开发" class="headerlink" title="项目开发"></a>项目开发</h3><ol>
+<li>生成组件 </li>
+</ol>
+<ul>
+<li><code>ng g c component-name</code> 生成在src下全局组件</li>
+<li><code>ng g c module-name/component-name</code> 组件生成在某模块下src下，并声明注册该模块</li>
+<li><code>ng g c path/component-name</code> 组件生成在项目path路径下，默认注册父模块，由父模块决定是否是全局组件还是某模块组件；</li>
+</ul>
+<p><a href="https://www.itsvse.com/thread-5196-1-1.html" target="_blank" rel="noopener">禁止生成spec.ts文件</a></p>
+<ol start="2">
+<li>生成模块 <code>ng g m module-name</code> 同上<br>其他参数</li>
+</ol>
+<ul>
+<li><code>--routing</code> 生成路由模块。  </li>
+<li><code>--module</code> 允许指定声明模块<br>####综上： <code>ng g m module-name --routing --module module-name</code></li>
+</ul>
+<ol start="3">
+<li><p>生成服务 <code>ng g s service-name</code> 同上</p>
+</li>
+<li><p>生成管道(原1.x中过滤器) <code>ng g p pipe-name</code></p>
+</li>
+<li><p>生成指令 <code>ng g d directive-name</code><br>指令分 属性型指令和结构型指令</p>
+</li>
+<li><p>生成class <code>ng g cl class-name</code> class-mame一般首字母大写，驼峰</p>
+</li>
+<li><p>生成接口interface <code>ng g i interface-name</code> 接口为ts特性 类型检查 声明参数类型</p>
+</li>
+</ol>
+<p>更多参数参考 <a href="https://github.com/angular/angular-cli/wiki/generate" target="_blank" rel="noopener">ng generate</a></p>
+<h3 id="编译项目"><a href="#编译项目" class="headerlink" title="编译项目"></a>编译项目</h3><p><code>ng build</code> 或 <code>npm run build</code></p>
+<p>参数</p>
+<ul>
+<li><p><code>--base-href /myUrl/</code> 相当于在index.html中添加<base href="/myUrl/">，默认<base href="/"></p>
+</li>
+<li><p><code>--prod</code> 通过UglifyJS 删除更多未使用的代码，使项目编译后更小体积</p>
+</li>
+<li><p><code>--output-hashing all</code> 编译后输出文件名以哈希模式，便于缓存</p>
+</li>
+<li><p><code>--stats-json</code> 生成一个“stats.json”文件，可以使用诸如：webpack bundle analyzer’或<a href="https://webpack.github.io/analyse.等工具进行前端分析。" target="_blank" rel="noopener">https://webpack.github.io/analyse.等工具进行前端分析。</a></p>
+</li>
+<li><p><code>--aot</code> 启用aot预编译</p>
+</li>
+<li><code>--build-optimizer</code> 使用“aot”选项时启用@angular-devkit/build-optimizer 优化。</li>
+</ul>
+<p>更多参数参考 <a href="https://github.com/angular/angular-cli/wiki/build" target="_blank" rel="noopener">ng build</a> </p>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">Snippet</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2019/01/07/vue-notice/" class="pre-post btn btn-default" title="vue-notice">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">vue-notice</span>
+        </a>
+    
+    
+        <a href="/2019/01/07/font-end-text/" class="next-post btn btn-default" title="font-end-text">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">font-end-text</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#新建项目"><span class="toc-text">新建项目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#启动项目"><span class="toc-text">启动项目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#项目开发"><span class="toc-text">项目开发</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#编译项目"><span class="toc-text">编译项目</span></a></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2017
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

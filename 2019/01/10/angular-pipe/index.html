@@ -1,0 +1,301 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Charblus-blog">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://yoursite.com">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>ngular6开发不完全笔记（一）-- 管道 | Charblus-blog</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="Charblus-blog" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="CharBlus">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                <h2> 生活如此多娇 </h2>
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://yoursite.com">Charblus-blog</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/前端/"><i class="fa "></i>前端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/后端/"><i class="fa "></i>后端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="ngular6开发不完全笔记（一）-- 管道">
+            
+	            ngular6开发不完全笔记（一）-- 管道
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/angular">
+            angular
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/前端" title="前端">
+                        前端
+                    </a>
+                
+                    <a href="/tags/angular" title="angular">
+                        angular
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2019/01/10</span>
+        </span>
+        
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <blockquote>
+<p>自定义管道 管道（过滤器）为过滤数据显示下列list数据</p>
+</blockquote>
+<ul>
+<li>pip.ts 文件<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Pipe, PipeTransform &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; TableType &#125; <span class="keyword">from</span> <span class="string">'./add-student.service'</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Pipe</span>(&#123;</span><br><span class="line">  name: <span class="string">'studyProjectType'</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> StudyProjectTypePipe <span class="keyword">implements</span> PipeTransform &#123;</span><br><span class="line">  transform( allstudyProjects: <span class="built_in">any</span>[], typeParams: <span class="built_in">any</span>): <span class="built_in">any</span> &#123;</span><br><span class="line">    <span class="comment">// console.log(typeParams);</span></span><br><span class="line">    <span class="keyword">return</span> allstudyProjects.filter(<span class="function"><span class="params">type</span> =&gt;</span> typeParams.indexOf(<span class="keyword">type</span>.type) !== <span class="number">-1</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>transform 方法是管道的基本要素。 PipeTransform接口中定义了它. 当每个输入值被传给 transform 方法时，还会带上另一个参数<br>allstudyProjects 是输入值 ，也就是html 页面中 <code>|</code>  前面的studyProjectList是管道名   typeParams是管道名后的参数 传进管道中<br>以上这两个为形参，名字自定义，建议命名规范，尤其是写分享管道 . transform 函数里return 是输入数据过滤filter，里面是一个函数</p>
+<blockquote>
+<p>这里的思路是 对比 请求下的数据 studyProjectList 每个列表的type属性 对比下面typeParams, 结果为true 就通过过滤显示</p>
+</blockquote>
+<p>本地数据来源<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">public types: TabType[] = [</span><br><span class="line">    &#123;</span><br><span class="line">      name: &apos;课程&apos;,</span><br><span class="line">      id: &apos;courseDate&apos;,</span><br><span class="line">      tags: [&apos;在线课&apos;, &apos;线上课&apos;, &apos;直播课&apos;, &apos;线下课&apos;],</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      name: &apos;考试&apos;,</span><br><span class="line">      id: &apos;examDate&apos;,</span><br><span class="line">      tags: [&apos;试卷&apos;],</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      name: &apos;作业&apos;,</span><br><span class="line">      id: &apos;taskDate&apos;,</span><br><span class="line">      tags: [&apos;作业&apos;],</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      name: &apos;问卷&apos;,</span><br><span class="line">      id: &apos;questionnaireDate&apos;,</span><br><span class="line">      tags: [&apos;问卷&apos;],</span><br><span class="line">    &#125;,</span><br><span class="line">  ];</span><br><span class="line">  private typeParams: string[] = this.types[0].tags;    //初始值</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>html 文件<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;table-responsive&quot;&gt;</span><br><span class="line">  &lt;!-- &#123;&#123; studyProjectList | studyProjectType &#125;&#125; --&gt;</span><br><span class="line">  &lt;app-project-assign-list  [studyProjectList] = &quot;studyProjectList | studyProjectType: typeParams &quot;&gt;&lt;/app-project-assign-list&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>app-project-assign-list 为列表样式组件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//click 点击事件 改变types[i]</span><br><span class="line">switchType (i) &#123;</span><br><span class="line">  this.typeParams = this.types[i].tags;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>线上数据来源<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">* 数据来源 </span><br><span class="line">* addStudentService 服务提供 getStudyProject方法</span><br><span class="line"> */</span><br><span class="line">dataSource: Observable&lt;any&gt;;</span><br><span class="line"> // studyProjectList: Array&lt;any&gt; = [];</span><br><span class="line">  studyProjectList: TableType[] = [];</span><br><span class="line"> constructor(</span><br><span class="line">   private addStudentService: AddStudentService,</span><br><span class="line"> ) &#123;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> ngOnInit() &#123;</span><br><span class="line">   this.dataSource = this.addStudentService.getStudyProject();</span><br><span class="line">   this.dataSource.subscribe(</span><br><span class="line">     (data) =&gt; &#123;</span><br><span class="line">       console.log(data);</span><br><span class="line">       this.studyProjectList = data.students;</span><br><span class="line">     &#125;</span><br><span class="line">   );</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">Snippet</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2019/01/10/scss/" class="pre-post btn btn-default" title="scss">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">scss</span>
+        </a>
+    
+    
+        <a href="/2019/01/07/font-end-dev-system-config/" class="next-post btn btn-default" title="font-end-dev-system-config">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">font-end-dev-system-config</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <p>暂无目录</p>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2017
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Charblus-blog</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2019-03-26T11:33:28.877Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>CharBlus</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ngular6开发不完全笔记（三）-- 报错指南</title>
+    <link href="http://yoursite.com/2019/01/22/angular-errer/"/>
+    <id>http://yoursite.com/2019/01/22/angular-errer/</id>
+    <published>2019-01-22T14:01:25.000Z</published>
+    <updated>2019-03-26T11:33:28.877Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="router"><a href="#router" class="headerlink" title="router"></a>router</h4><blockquote><p>Uncaught Error: Template parse errors:<br>‘router-outlet’ is not a known element:</p><ol><li>If ‘router-outlet’ is an Angular component, then verify that it is part of this module.</li><li>If ‘router-outlet’ is a Web Component then add ‘CUSTOM_ELEMENTS_SCHEMA’ to the <a href="mailto:&#39;@NgModule.schemas" target="_blank" rel="noopener">&#39;@NgModule.schemas</a>‘ of this component to suppress this message.</li></ol></blockquote><ul><li>解决方法</li></ul><ol><li>每个模块中都添加 <code>import { RouterModule } from &#39;@angular/router&#39;;</code>   然后 import即可 </li><li>【推荐】建立shared模块 在分享模块中导入 <code>RouterModule</code> 然后导出，其他有使用 <code>&lt;router-outlet&gt;&lt;/router-outlet&gt;</code> 的模块都导入 shared模块<blockquote><p>主要是导入RouterModule指令， 根据自己的写法调整， 二者选一即可</p></blockquote></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;router&quot;&gt;&lt;a href=&quot;#router&quot; class=&quot;headerlink&quot; title=&quot;router&quot;&gt;&lt;/a&gt;router&lt;/h4&gt;&lt;blockquote&gt;
+&lt;p&gt;Uncaught Error: Template parse errors:&lt;br
+      
+    
+    </summary>
+    
+      <category term="angular" scheme="http://yoursite.com/categories/angular/"/>
+    
+      <category term="分类2" scheme="http://yoursite.com/categories/angular/%E5%88%86%E7%B1%BB2/"/>
+    
+    
+      <category term="前端" scheme="http://yoursite.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="标签2" scheme="http://yoursite.com/tags/%E6%A0%87%E7%AD%BE2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>js-design-model</title>
+    <link href="http://yoursite.com/2019/01/13/js-design-model/"/>
+    <id>http://yoursite.com/2019/01/13/js-design-model/</id>
+    <published>2019-01-12T17:34:28.000Z</published>
+    <updated>2019-03-26T11:33:28.879Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="分类2" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/%E5%88%86%E7%B1%BB2/"/>
+    
+    
+      <category term="标签2" scheme="http://yoursite.com/tags/%E6%A0%87%E7%AD%BE2/"/>
+    
+      <category term="javaScript" scheme="http://yoursite.com/tags/javaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>scss</title>
+    <link href="http://yoursite.com/2019/01/10/scss/"/>
+    <id>http://yoursite.com/2019/01/10/scss/</id>
+    <published>2019-01-09T19:59:01.000Z</published>
+    <updated>2019-03-26T11:33:28.880Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="sass嵌套"><a href="#sass嵌套" class="headerlink" title="sass嵌套"></a>sass嵌套</h3><ol><li>选择器嵌套<blockquote><p>这里的 &amp; 代表 nav a ,理解起来有点 像js中this 的意思</p></blockquote></li></ol><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">header</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">nav</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>home<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>page<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">nav</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">header</span>&gt;</span></span><br></pre></td></tr></table></figure><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="selector-tag">nav</span> <span class="selector-tag">a</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>:red;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">header</span> <span class="selector-tag">nav</span> <span class="selector-tag">a</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>:green;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">nav</span> &#123;</span><br><span class="line">  <span class="selector-tag">a</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: red;</span><br><span class="line">    </span><br><span class="line">    <span class="selector-tag">header</span> &amp; &#123;</span><br><span class="line">      <span class="attribute">color</span>:green;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><ol start="2"><li>属性嵌套(有相同的属性前缀)<blockquote><p>如 font, background等，也有可能是 -webkit-</p></blockquote></li></ol><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">     <span class="attribute">font-size</span>: <span class="number">12px</span>;</span><br><span class="line">     <span class="attribute">font-weight</span>: bold;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">  <span class="attribute">font</span>: &#123;</span><br><span class="line">   size: <span class="number">12px</span>;</span><br><span class="line">   weight: bold;</span><br><span class="line">  &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><ol start="3"><li>伪类嵌套<blockquote><p>同上选择器嵌套一样  使用 &amp; 关键字 </p></blockquote></li></ol><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.clearfix</span>&#123;</span><br><span class="line">&amp;:before,</span><br><span class="line">&amp;:after &#123;</span><br><span class="line">    <span class="attribute">content</span>:<span class="string">""</span>;</span><br><span class="line">    <span class="attribute">display</span>: table;</span><br><span class="line">  &#125;</span><br><span class="line">&amp;:after &#123;</span><br><span class="line">    <span class="attribute">clear</span>:both;</span><br><span class="line">    <span class="attribute">overflow</span>: hidden;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">clearfix</span><span class="selector-pseudo">:before</span>, <span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span> &#123;</span><br><span class="line">  <span class="attribute">content</span>: <span class="string">""</span>;</span><br><span class="line">  <span class="attribute">display</span>: table;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span> &#123;</span><br><span class="line">  <span class="attribute">clear</span>: both;</span><br><span class="line">  <span class="attribute">overflow</span>: hidden;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="占位符："><a href="#占位符：" class="headerlink" title="占位符："></a>占位符：</h3><p>语法：%placeholder，<br>用法：占位符不被 @extend 调用不产生任何代码</p><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">%bg &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#FF0</span>;</span><br><span class="line">&#125;</span><br><span class="line">%w &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">  @<span class="keyword">extend</span> %w;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">  @<span class="keyword">extend</span> %bg;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="sass-语法"><a href="#sass-语法" class="headerlink" title="sass 语法"></a>sass 语法</h3><p>允许使用变量 以 $ 开头</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$test: #ff9500</span><br><span class="line">div&#123;</span><br><span class="line">       color: $test;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>也可以字符串拼接</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$side : left;</span><br><span class="line">  </span><br><span class="line">.rounded &#123; </span><br><span class="line">        border-#&#123;$side&#125;-radius: 5px;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure><p>也可以加减乘除 简单计算</p><h3 id="sass分享："><a href="#sass分享：" class="headerlink" title="sass分享："></a>sass分享：</h3><p>内容：全局、默认、局部变量<br>使用：默认变量 在局部中无效，覆盖 默认变量 不分上下顺序</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box1"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box2"</span>&gt;</span>box2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$backgroundColor</span>: <span class="number">#FF0</span>;                  <span class="comment">// 全局变量</span></span><br><span class="line"><span class="variable">$backgroundColor</span>: <span class="number">#000</span> !default;      <span class="comment">// 默认变量</span></span><br><span class="line"><span class="variable">$color</span>: <span class="number">#F0F</span>;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.box1</span> &#123;</span><br><span class="line">  <span class="variable">$color</span>: <span class="number">#CCC</span>;                                   <span class="comment">// 局部变量</span></span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="variable">$backgroundColor</span>; <span class="comment">// #FF0</span></span><br><span class="line">  <span class="selector-class">.box2</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="variable">$color</span>;                                      <span class="comment">// #CCC</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="控制指令-Control-Directives"><a href="#控制指令-Control-Directives" class="headerlink" title="控制指令 (Control Directives)"></a>控制指令 (Control Directives)</h3><p>混合指令</p><p>mixin  技术文档翻译  混合类型<br>mixing  混合 （mix 的现在分词）</p><p>mixin    sass官方文档称  混合指令<br>@mixin  为定义混合指令<br>@include   为引用楼上定义的混合指令</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>= <span class="string">"parent"</span>&gt;</span></span><br><span class="line">111</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>= <span class="string">"child"</span>&gt;</span></span><br><span class="line">222</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>= <span class="string">"test"</span>&gt;</span></span><br><span class="line">333</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.parent</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.child</span> &#123;</span><br><span class="line">  @<span class="keyword">extend</span> .parent;</span><br><span class="line">  <span class="attribute">font-size</span>: (<span class="number">21px</span> * <span class="number">3</span>);</span><br><span class="line">&#125;</span><br><span class="line">@minxin auto &#123;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">0</span> auto;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.test</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">  @<span class="keyword">include</span> auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h4 id="sass-的-if-控制指令"><a href="#sass-的-if-控制指令" class="headerlink" title="sass 的 @if  控制指令"></a>sass 的 @if  控制指令</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"demo"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure><p>单独使用@if：</p><blockquote><p>当@if 的表达式不是false或者null时， 条件成立， 输出{} 内的代码</p></blockquote><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.demo</span>&#123;</span><br><span class="line">  <span class="variable">$fx</span>: bottom;</span><br><span class="line">  @<span class="keyword">if</span> (<span class="variable">$fx</span> == top) &#123;</span><br><span class="line">    <span class="attribute">border-color</span>: transparent transparent pink transparent;</span><br><span class="line">    <span class="attribute">border-style</span>: dashed dashed solid dashed;</span><br><span class="line">  &#125;</span><br><span class="line">  @<span class="keyword">else</span> if(<span class="variable">$fx</span> == right)&#123;</span><br><span class="line">    <span class="attribute">border-color</span>: transparent transparent transparent pink;</span><br><span class="line">    <span class="attribute">border-style</span>: dashed dashed dashed solid;</span><br><span class="line">  &#125;</span><br><span class="line">  @<span class="keyword">else</span> if(<span class="variable">$fx</span> == bottom)&#123;</span><br><span class="line">    <span class="attribute">border-color</span>: pink transparent transparent transparent;</span><br><span class="line">    <span class="attribute">border-style</span>: solid dashed dashed dashed;</span><br><span class="line">  &#125;</span><br><span class="line">  @<span class="keyword">else</span> if(<span class="variable">$fx</span> == left)&#123;</span><br><span class="line">    <span class="attribute">border-color</span>: transparent pink transparent transparent;</span><br><span class="line">    <span class="attribute">border-style</span>: dashed solid dashed dashed;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="attribute">width</span>: <span class="number">0px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">0px</span>;</span><br><span class="line">  <span class="attribute">overflow</span>: hidden;</span><br><span class="line">  <span class="attribute">border-width</span>: <span class="number">60px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>混合指令 + @if 指令</p><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 画三角形@mixin声明</span></span><br><span class="line">@<span class="keyword">mixin</span> sj(<span class="variable">$fx</span>:top,<span class="variable">$size</span>:<span class="number">100px</span>,<span class="variable">$color</span>:red)&#123;</span><br><span class="line"></span><br><span class="line">  @<span class="keyword">if</span> (<span class="variable">$fx</span> == top) &#123;</span><br><span class="line">    <span class="attribute">border-color</span>: transparent transparent <span class="variable">$color</span> transparent;</span><br><span class="line">    <span class="attribute">border-style</span>: dashed dashed solid dashed;</span><br><span class="line">  &#125;</span><br><span class="line">  @<span class="keyword">else</span> if(<span class="variable">$fx</span> == right)&#123;</span><br><span class="line">    <span class="attribute">border-color</span>: transparent transparent transparent <span class="variable">$color</span>;</span><br><span class="line">    <span class="attribute">border-style</span>: dashed dashed dashed solid;</span><br><span class="line">  &#125;</span><br><span class="line">  @<span class="keyword">else</span> if(<span class="variable">$fx</span> == bottom)&#123;</span><br><span class="line">    <span class="attribute">border-color</span>: <span class="variable">$color</span> transparent transparent transparent;</span><br><span class="line">    <span class="attribute">border-style</span>: solid dashed dashed dashed;</span><br><span class="line">  &#125;</span><br><span class="line">  @<span class="keyword">else</span> if(<span class="variable">$fx</span> == left)&#123;</span><br><span class="line">    <span class="attribute">border-color</span>: transparent <span class="variable">$color</span> transparent transparent;</span><br><span class="line">    <span class="attribute">border-style</span>: dashed solid dashed dashed;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="attribute">width</span>: <span class="number">0px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">0px</span>;</span><br><span class="line">  <span class="attribute">overflow</span>: hidden;</span><br><span class="line">  <span class="attribute">border-width</span>: <span class="variable">$size</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//mixin的调用</span></span><br><span class="line"><span class="selector-class">.demo</span>&#123;</span><br><span class="line">  @<span class="keyword">include</span> sj(left, 66px, pink);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>less 与sass有个很明显的区别<br>变量<br> 咱们sass 变量用   $  开头<br>less  是以 @ 开头的</p><h3 id="sass语法-for-控制指令"><a href="#sass语法-for-控制指令" class="headerlink" title="sass语法  @for 控制指令"></a>sass语法  @for 控制指令</h3><blockquote><p>@for 指令可以在限制的范围内重复输出格式，每次按要求（变量的值）对输出结果做出变动；</p></blockquote><p>这个指令包含两种格式：<br>@for $var from <start> through <end>，<br>  或者<br>  @for $var from <start> to <end></end></start></end></start></p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item-1"</span>&gt;</span>至尊魔法师<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item-2"</span>&gt;</span>王<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item-3"</span>&gt;</span>奇异博士<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item-4"</span>&gt;</span>莫度男爵<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item-5"</span>&gt;</span>哈姆雷特<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item-6"</span>&gt;</span>蜘蛛侠<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item-7"</span>&gt;</span>非人哉<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure><p>from … through</p><p>// 当使用 through 时，条件范围包含 <start> 与 <end> 的值</end></start></p><p>// 个人分析： 可以将一个页面，不同div中嵌套的元素设置样式，只要命名符合一定的规律</p><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">for</span> <span class="variable">$i</span> from 1 through 7 &#123;</span><br><span class="line">  <span class="selector-class">.item-</span>#&#123;<span class="variable">$i</span>&#125; &#123; </span><br><span class="line">    <span class="attribute">width</span>: <span class="number">6em</span> * <span class="variable">$i</span>;</span><br><span class="line">    <span class="attribute">background</span>: pink;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">6px</span> <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>from … to</p><blockquote><p>使用 to 时条件范围只包含 <start> 的值不包含 <end> 的值。另外，$var 可以是任何变量，比如 $i；<start> 和 <end> 必须是整数值。<br><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">for</span> <span class="variable">$i</span> from 1 to 7 &#123;</span><br><span class="line">  <span class="selector-class">.item-</span>#&#123;<span class="variable">$i</span>&#125; &#123; </span><br><span class="line">    <span class="attribute">width</span>: <span class="number">6em</span> * <span class="variable">$i</span>;</span><br><span class="line">    <span class="attribute">background</span>: pink;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">6px</span> <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></end></start></end></start></p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@each $usr in nezha, aolie, xiaoyu, xiaotian &#123;</span><br><span class="line">    .#&#123;$usr&#125;-avatar &#123;</span><br><span class="line">        background-image: url(&apos;/img/#&#123;$usr&#125;.png&apos;);</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>@each 后面的 $usr 变量用于保存每次遍历到的元素，然后使用差值语法（#{var}）来拼接正确的图片路径</p><p>//@each 指令同样可以用于循环输出，和 @for 的差别在于，@each 通过遍历 list 或者 map 实现循环输出<br>// 如果遍历的对象是一个 map，那么我们就可以使用两个变量来存储元素的 key 和 value</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$frz: ( usr1:xiaotian, usr2:sanyan, usr3:shancai, usr4:longnv );</span><br><span class="line"></span><br><span class="line">@each $key, $usr in $frz &#123;</span><br><span class="line">    .#&#123;$usr&#125;-avatar &#123;</span><br><span class="line">        background-image: url(&apos;/img/#&#123;$usr&#125;.png&apos;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>运算的坑</p><blockquote><p>加号居然可以不需要空格隔开,但必须单位统一</p></blockquote><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="variable">$sidebar-width</span>: <span class="number">220px</span>;</span><br><span class="line"><span class="variable">$content-width</span>: <span class="number">720px</span>;</span><br><span class="line"><span class="variable">$gap-width</span>: <span class="number">20px</span>;</span><br><span class="line"><span class="variable">$other-width</span>: <span class="number">2em</span>;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="comment">// width: $sidebar-width+$content-width + $gap-width;</span></span><br><span class="line">    <span class="attribute">width</span>: <span class="variable">$sidebar-width</span> + <span class="variable">$other-width</span>;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span> auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p> 还可以做字符连接</p></blockquote><ol><li>如果有引号的字符串被添加了一个没有引号的字符串 （也就是，带引号的字符串在 + 符号左侧）， 结果会是一个有引号的字符串。 </li><li>如果一个没有引号的字符串被添加了一个有引号的字符串 （没有引号的字符串在 + 符号左侧）， 结果将是一个没有引号的字符串。</li></ol><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span>:before &#123;</span><br><span class="line">  <span class="attribute">content</span>: <span class="string">"bing"</span> + jian;</span><br><span class="line">  <span class="attribute">font-family</span>: sans- + <span class="string">"serif"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>编译后</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">:before</span> &#123;</span><br><span class="line">  <span class="attribute">content</span>: <span class="string">"bingjian"</span>;</span><br><span class="line">  <span class="attribute">font-family</span>: sans-serif;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p>减法 - 需要注意空格了，否则就完蛋喽</p></blockquote><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$full-width</span>: <span class="number">960px</span>;</span><br><span class="line"><span class="variable">$sidebar-width</span>: <span class="number">200px</span>;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.content</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="variable">$full-width</span> - <span class="variable">$sidebar-width</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p>乘法<br>能够支持多种单位（比如 em ,px , %）；<br>如果进行乘法运算时，两个值单位相同时，只需要为一个数值提供单位即可(多个乘数中只需要一个乘数提供单位，否则报错)。</p></blockquote><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">10px</span> * <span class="number">2</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>否则</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.box &#123;</span><br><span class="line">  width: 10px * 6px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p>error: 60px*px isn’t a valid CSS value.</p></blockquote><blockquote><p>除法</p></blockquote><p>众所周知“/”符号在 CSS 中已做为一种符号使用。其在 CSS 中通常起到分隔数字的用途，<br>因此在 Sass 中做除法运算时，直接使用“/”符号做为除号时，将不会生效，<br>编译时既得不到我们需要的效果，也不会报错。<br>需要给运算的外面添加一个小括号()才能执行除法运算</p><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: (<span class="number">100px</span> / <span class="number">2</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>总结: ”/  ”符号被当作除法运算符时有以下几种情况：<br>   　　 如果数值或它的任意部分是存储在一个变量中或是函数的返回值。<br>    　　如果数值被圆括号包围。<br>    　　如果数值是另一个数学表达式的一部分。</p><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span> &#123;</span><br><span class="line">  <span class="attribute">font</span>: <span class="number">10px</span>/<span class="number">8px</span>;        <span class="comment">// 纯 CSS，不是除法运算</span></span><br><span class="line">  <span class="variable">$width</span>: <span class="number">1000px</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="variable">$width</span>/<span class="number">2</span>;          <span class="comment">// 使用了变量，是除法运算</span></span><br><span class="line">  <span class="attribute">width</span>: round(<span class="number">1.5</span>)/<span class="number">2</span>;        <span class="comment">// 使用了函数，是除法运算</span></span><br><span class="line">  <span class="attribute">height</span>: (<span class="number">500px</span>/<span class="number">2</span>);          <span class="comment">// 使用了圆括号，是除法运算</span></span><br><span class="line">  <span class="attribute">margin-left</span>: <span class="number">5px</span> + <span class="number">8px</span>/<span class="number">2px</span>;  <span class="comment">// 使用了加（+）号，是除法运算</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>还有一种情况</p><blockquote><p>Sass 的除法运算还有一个情况。先回忆一下，在乘法运算时，如果两个值带有相同单位时，做乘法运算时，出来的结果并不是我们需要的结果。但在除法运算时，如果两个值带有相同的单位值时，除法运算之后会得到一个不带单位的数值。　</p></blockquote><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: (<span class="number">1000px</span> / <span class="number">100px</span>);ß</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p>颜色运算 - 分段运算</p></blockquote><p>　　所有算数运算都支持颜色值，并且是分段运算的。也就是说，红、绿和蓝各颜色分段单独进行运算。如：</p><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#012423</span> + <span class="number">#120923</span>;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#324334</span> * <span class="number">2</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="有顺工作"><a href="#有顺工作" class="headerlink" title="有顺工作"></a>有顺工作</h3><p>将所有的Mixins、Placeholder、Functions和变量放置在一起。将他们放置一起，可以确认他们可以很快的编写以及将来重复使用。</p><ol><li>整站的元素应该放在一个base文件夹中。base文件夹应该包括全局的变量，如字体和颜色等</li><li>对于特定模块的Mixins、Functions 和变量，为了保证模块能正常运行，需要将这些集中放置在module文件中</li></ol><h3 id="限制嵌套"><a href="#限制嵌套" class="headerlink" title="限制嵌套"></a>限制嵌套</h3><p><strong>使用嵌套的黄金规则：</strong></p><ol><li>嵌套永远不要超过三个层级</li><li>确保输出的CSS简洁、可重用</li><li>使用嵌套是很有意义的，而不是默认选项</li></ol><blockquote><p>过度的嵌套会导致很多问题的发生,代码变得复杂，而且太过于依赖HTML结构。这样将导致后面的样式需要使用!important来覆盖</p></blockquote><h2 id="scss-基本用法"><a href="#scss-基本用法" class="headerlink" title="scss 基本用法"></a>scss 基本用法</h2><ol><li>变量（局部/全局）声明：$+变量名：变量值；默认变量在变量名后加default，!global变成全局变量。</li><li>混合宏（可重用的代码块）：声明混合宏@mixin border-radius { }； 调用混合宏 @include。 border-radius; 声明的时候还可以带默认参数，调用可以传参。</li><li>继承： @extend .btn; 继承btn class。任何选择器都能继承，可以连续继承。</li><li>占位符%：占位符声明的代码如果不被@extend调用，就不会被编译产生css代码。</li><li>插值：#{$参数名}，插入传入或定义的参数。</li><li>注释：/<em> </em>/ :会在编译出来的css文件中显示；//内容：不会显示。/!/：重要注释，任何style的css文件中都会有，一般放置css文件版权说明等信息。</li><li>加减法：同单位的数值之间可以做加减法。</li><li>乘除法：只能乘数值；如果除式中没有变量或者不是在一个数学表达式中（有加法减法等），就要将除式运算用小括号括起来，否则“/”不会被当做除号运算。</li><li>颜色运算：算术运算都支持颜色值，并且是分段计算的，01+05=06</li><li>字符串连接：+，$content: “Hello” + “” + “Sass!”;cursor: e + -resize；有引号的字符串和没有引号的字符串相加，以左边字符有无引号为准。</li><li>父类选择器：&amp;，表示引用父元素，</li><li>if语法：@if,@else,</li><li>循环语法：@for,@while,@each,</li><li>函数：@function double ($number){ @return $number*2; }</li><li>import：导入其他的scss</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;sass嵌套&quot;&gt;&lt;a href=&quot;#sass嵌套&quot; class=&quot;headerlink&quot; title=&quot;sass嵌套&quot;&gt;&lt;/a&gt;sass嵌套&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;选择器嵌套&lt;blockquote&gt;
+&lt;p&gt;这里的 &amp;amp; 代表 nav a ,理解起来有点 
+      
+    
+    </summary>
+    
+      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="分类2" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/%E5%88%86%E7%B1%BB2/"/>
+    
+    
+      <category term="前端" scheme="http://yoursite.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="css" scheme="http://yoursite.com/tags/css/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ngular6开发不完全笔记（一）-- 管道</title>
+    <link href="http://yoursite.com/2019/01/10/angular-pipe/"/>
+    <id>http://yoursite.com/2019/01/10/angular-pipe/</id>
+    <published>2019-01-09T19:43:12.000Z</published>
+    <updated>2019-03-26T11:33:28.877Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>自定义管道 管道（过滤器）为过滤数据显示下列list数据</p></blockquote><ul><li>pip.ts 文件<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Pipe, PipeTransform &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; TableType &#125; <span class="keyword">from</span> <span class="string">'./add-student.service'</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Pipe</span>(&#123;</span><br><span class="line">  name: <span class="string">'studyProjectType'</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> StudyProjectTypePipe <span class="keyword">implements</span> PipeTransform &#123;</span><br><span class="line">  transform( allstudyProjects: <span class="built_in">any</span>[], typeParams: <span class="built_in">any</span>): <span class="built_in">any</span> &#123;</span><br><span class="line">    <span class="comment">// console.log(typeParams);</span></span><br><span class="line">    <span class="keyword">return</span> allstudyProjects.filter(<span class="function"><span class="params">type</span> =&gt;</span> typeParams.indexOf(<span class="keyword">type</span>.type) !== <span class="number">-1</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ul><p>transform 方法是管道的基本要素。 PipeTransform接口中定义了它. 当每个输入值被传给 transform 方法时，还会带上另一个参数<br>allstudyProjects 是输入值 ，也就是html 页面中 <code>|</code>  前面的studyProjectList是管道名   typeParams是管道名后的参数 传进管道中<br>以上这两个为形参，名字自定义，建议命名规范，尤其是写分享管道 . transform 函数里return 是输入数据过滤filter，里面是一个函数</p><blockquote><p>这里的思路是 对比 请求下的数据 studyProjectList 每个列表的type属性 对比下面typeParams, 结果为true 就通过过滤显示</p></blockquote><p>本地数据来源<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">public types: TabType[] = [</span><br><span class="line">    &#123;</span><br><span class="line">      name: &apos;课程&apos;,</span><br><span class="line">      id: &apos;courseDate&apos;,</span><br><span class="line">      tags: [&apos;在线课&apos;, &apos;线上课&apos;, &apos;直播课&apos;, &apos;线下课&apos;],</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      name: &apos;考试&apos;,</span><br><span class="line">      id: &apos;examDate&apos;,</span><br><span class="line">      tags: [&apos;试卷&apos;],</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      name: &apos;作业&apos;,</span><br><span class="line">      id: &apos;taskDate&apos;,</span><br><span class="line">      tags: [&apos;作业&apos;],</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      name: &apos;问卷&apos;,</span><br><span class="line">      id: &apos;questionnaireDate&apos;,</span><br><span class="line">      tags: [&apos;问卷&apos;],</span><br><span class="line">    &#125;,</span><br><span class="line">  ];</span><br><span class="line">  private typeParams: string[] = this.types[0].tags;    //初始值</span><br></pre></td></tr></table></figure></p><ul><li>html 文件<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;table-responsive&quot;&gt;</span><br><span class="line">  &lt;!-- &#123;&#123; studyProjectList | studyProjectType &#125;&#125; --&gt;</span><br><span class="line">  &lt;app-project-assign-list  [studyProjectList] = &quot;studyProjectList | studyProjectType: typeParams &quot;&gt;&lt;/app-project-assign-list&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></li></ul><blockquote><p>app-project-assign-list 为列表样式组件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//click 点击事件 改变types[i]</span><br><span class="line">switchType (i) &#123;</span><br><span class="line">  this.typeParams = this.types[i].tags;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p></blockquote><p>线上数据来源<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">* 数据来源 </span><br><span class="line">* addStudentService 服务提供 getStudyProject方法</span><br><span class="line"> */</span><br><span class="line">dataSource: Observable&lt;any&gt;;</span><br><span class="line"> // studyProjectList: Array&lt;any&gt; = [];</span><br><span class="line">  studyProjectList: TableType[] = [];</span><br><span class="line"> constructor(</span><br><span class="line">   private addStudentService: AddStudentService,</span><br><span class="line"> ) &#123;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> ngOnInit() &#123;</span><br><span class="line">   this.dataSource = this.addStudentService.getStudyProject();</span><br><span class="line">   this.dataSource.subscribe(</span><br><span class="line">     (data) =&gt; &#123;</span><br><span class="line">       console.log(data);</span><br><span class="line">       this.studyProjectList = data.students;</span><br><span class="line">     &#125;</span><br><span class="line">   );</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;自定义管道 管道（过滤器）为过滤数据显示下列list数据&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;pip.ts 文件&lt;figure class=&quot;highlight ts&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;
+      
+    
+    </summary>
+    
+      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="angular" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/angular/"/>
+    
+    
+      <category term="前端" scheme="http://yoursite.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="angular" scheme="http://yoursite.com/tags/angular/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>font-end-dev-system-config</title>
+    <link href="http://yoursite.com/2019/01/07/font-end-dev-system-config/"/>
+    <id>http://yoursite.com/2019/01/07/font-end-dev-system-config/</id>
+    <published>2019-01-06T19:53:44.000Z</published>
+    <updated>2019-03-26T11:33:28.878Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="分类1" scheme="http://yoursite.com/categories/%E5%88%86%E7%B1%BB1/"/>
+    
+      <category term="分类2" scheme="http://yoursite.com/categories/%E5%88%86%E7%B1%BB1/%E5%88%86%E7%B1%BB2/"/>
+    
+    
+      <category term="标签2" scheme="http://yoursite.com/tags/%E6%A0%87%E7%AD%BE2/"/>
+    
+      <category term="标签1" scheme="http://yoursite.com/tags/%E6%A0%87%E7%AD%BE1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vue-notice</title>
+    <link href="http://yoursite.com/2019/01/07/vue-notice/"/>
+    <id>http://yoursite.com/2019/01/07/vue-notice/</id>
+    <published>2019-01-06T19:53:03.000Z</published>
+    <updated>2019-03-26T11:33:28.880Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="分类1" scheme="http://yoursite.com/categories/%E5%88%86%E7%B1%BB1/"/>
+    
+      <category term="分类2" scheme="http://yoursite.com/categories/%E5%88%86%E7%B1%BB1/%E5%88%86%E7%B1%BB2/"/>
+    
+    
+      <category term="标签2" scheme="http://yoursite.com/tags/%E6%A0%87%E7%AD%BE2/"/>
+    
+      <category term="标签1" scheme="http://yoursite.com/tags/%E6%A0%87%E7%AD%BE1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>angular6开发不完全笔记（一）</title>
+    <link href="http://yoursite.com/2019/01/07/angular-notice/"/>
+    <id>http://yoursite.com/2019/01/07/angular-notice/</id>
+    <published>2019-01-06T19:52:36.000Z</published>
+    <updated>2019-03-26T11:33:28.877Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="新建项目"><a href="#新建项目" class="headerlink" title="新建项目"></a>新建项目</h3><p>请在终端/控制台窗口中运行  <code>ng -v</code> 命令。 确定您已安装@angular/cli<br>if没有执行 <code>npm install -g @angular/cli</code> 全局安装 Angular CLI。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ng new project-name</span><br></pre></td></tr></table></figure><p>就具体项目开发前调研技术栈追加相关参数</p><ul><li><p>样式style 如 <code>--style=scss</code>  value值可以是（css | scss | sass | less | stylus ）等</p></li><li><p>项目中使用路由routing 如 <code>--routing</code> 生成routing module</p></li><li><p>前缀 prefix 如 <code>--prefix</code> 或 <code>-p</code>  默认为app,参数自定义  比如 <code>--prefix=wn</code></p></li></ul><p>后话</p><blockquote><p>angular.json 文件中 <code>&quot;prefix&quot;: &quot;app&quot;</code>, 会更改为<code>&quot;prefix&quot;: &quot;wn&quot;</code><br> tslint验证规则 项目中所有的组件前缀都改为<code>wn</code>开头的 index.html文件<code>&lt;app-root&gt;&lt;/app-root&gt;</code>变为<code>&lt;wn-root&gt;&lt;wn-root&gt;</code><br>所有 <code>ng g c component-name</code> 生成的组件 prefix默认时使用<code>&lt;app-componet-name&gt;&lt;/app-componet-name&gt;</code> 自定义前缀后 <code>&lt;wn-componet-name&gt;&lt;/wn-componet-name&gt;</code></p></blockquote><p>#####综合上述 <code>ng new project-name --style=scss --routing --prefix=wn</code></p><p>更多参数参考 <a href="https://github.com/angular/angular-cli/wiki/new" target="_blank" rel="noopener">ng new</a></p><h3 id="启动项目"><a href="#启动项目" class="headerlink" title="启动项目"></a>启动项目</h3><p><code>ng serve</code> 或者 <code>npm run start</code></p><ul><li>开发环境项目如开始对接接口需要配置本地代理 </li></ul><ol><li><p>一般在根目录下添加proxy.config.json文件</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;/api&quot;: &#123;</span><br><span class="line">    &quot;target&quot;: &quot;http://xxx.xxx.com&quot;,</span><br><span class="line">    &quot;secure&quot;: false,</span><br><span class="line">    // &quot;logLevel&quot;:&quot;debug&quot;,</span><br><span class="line">    &quot;changeOrigin&quot;: true,</span><br><span class="line">    &quot;pathRewrite&quot;:&#123;</span><br><span class="line">      &quot;^/api&quot;:&quot;&quot;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>文件package.json中scripts 下 start的value值<code>ng serve --proxy-config proxy.config.json</code>   或者在angular.json 中  serve下 options添加属性 <code>&quot;proxyConfig&quot;：&quot;proxy.config.json&quot;</code></p></li></ol><blockquote><p>ng serve 其他参数</p><ul><li>接口默认4200 <code>--port 4201</code></li><li>启动时自动打开浏览器 <code>--open</code> 简写<code>-o</code></li><li>用host指定运行主机 <code>--host 0.0.0.0</code> 或<code>--public-host 192.168.1.111</code> 指定浏览器客户端将使用的URL</li><li>正在生成的应用程序的基URL <code>--base-href /admin/</code>或者 <code>--base-href http://www.example.com/</code>  相当于index.html添加<base>html标签  属性href规定页面中所有相对链接的基准 URL。 如 <code>&lt;base href=&quot;http://www.example.com/&quot;&gt;</code> 注：参数值后面一定要多个 <code>/</code> 结尾，否则无效</li></ul></blockquote><p>#####综合上述1（未对接） <code>ng serve --port 4201 --open</code></p><p>#####综合上述2 <code>ng serve --proxy-config proxy.config.json --host 0.0.0.0 --port 4201 --open</code></p><p>更多参数参考 <a href="https://github.com/angular/angular-cli/wiki/serve" target="_blank" rel="noopener">ng serve</a></p><h3 id="项目开发"><a href="#项目开发" class="headerlink" title="项目开发"></a>项目开发</h3><ol><li>生成组件 </li></ol><ul><li><code>ng g c component-name</code> 生成在src下全局组件</li><li><code>ng g c module-name/component-name</code> 组件生成在某模块下src下，并声明注册该模块</li><li><code>ng g c path/component-name</code> 组件生成在项目path路径下，默认注册父模块，由父模块决定是否是全局组件还是某模块组件；</li></ul><p><a href="https://www.itsvse.com/thread-5196-1-1.html" target="_blank" rel="noopener">禁止生成spec.ts文件</a></p><ol start="2"><li>生成模块 <code>ng g m module-name</code> 同上<br>其他参数</li></ol><ul><li><code>--routing</code> 生成路由模块。  </li><li><code>--module</code> 允许指定声明模块<br>####综上： <code>ng g m module-name --routing --module module-name</code></li></ul><ol start="3"><li><p>生成服务 <code>ng g s service-name</code> 同上</p></li><li><p>生成管道(原1.x中过滤器) <code>ng g p pipe-name</code></p></li><li><p>生成指令 <code>ng g d directive-name</code><br>指令分 属性型指令和结构型指令</p></li><li><p>生成class <code>ng g cl class-name</code> class-mame一般首字母大写，驼峰</p></li><li><p>生成接口interface <code>ng g i interface-name</code> 接口为ts特性 类型检查 声明参数类型</p></li></ol><p>更多参数参考 <a href="https://github.com/angular/angular-cli/wiki/generate" target="_blank" rel="noopener">ng generate</a></p><h3 id="编译项目"><a href="#编译项目" class="headerlink" title="编译项目"></a>编译项目</h3><p><code>ng build</code> 或 <code>npm run build</code></p><p>参数</p><ul><li><p><code>--base-href /myUrl/</code> 相当于在index.html中添加<base href="/myUrl/">，默认<base href="/"></p></li><li><p><code>--prod</code> 通过UglifyJS 删除更多未使用的代码，使项目编译后更小体积</p></li><li><p><code>--output-hashing all</code> 编译后输出文件名以哈希模式，便于缓存</p></li><li><p><code>--stats-json</code> 生成一个“stats.json”文件，可以使用诸如：webpack bundle analyzer’或<a href="https://webpack.github.io/analyse.等工具进行前端分析。" target="_blank" rel="noopener">https://webpack.github.io/analyse.等工具进行前端分析。</a></p></li><li><p><code>--aot</code> 启用aot预编译</p></li><li><code>--build-optimizer</code> 使用“aot”选项时启用@angular-devkit/build-optimizer 优化。</li></ul><p>更多参数参考 <a href="https://github.com/angular/angular-cli/wiki/build" target="_blank" rel="noopener">ng build</a> </p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;新建项目&quot;&gt;&lt;a href=&quot;#新建项目&quot; class=&quot;headerlink&quot; title=&quot;新建项目&quot;&gt;&lt;/a&gt;新建项目&lt;/h3&gt;&lt;p&gt;请在终端/控制台窗口中运行  &lt;code&gt;ng -v&lt;/code&gt; 命令。 确定您已安装@angular/cli&lt;br&gt;if
+      
+    
+    </summary>
+    
+      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="angular7" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/angular7/"/>
+    
+    
+      <category term="前端" scheme="http://yoursite.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="angular" scheme="http://yoursite.com/tags/angular/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>font-end-text</title>
+    <link href="http://yoursite.com/2019/01/07/font-end-text/"/>
+    <id>http://yoursite.com/2019/01/07/font-end-text/</id>
+    <published>2019-01-06T19:51:17.000Z</published>
+    <updated>2019-03-26T11:33:28.878Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="分类1" scheme="http://yoursite.com/categories/%E5%88%86%E7%B1%BB1/"/>
+    
+      <category term="分类2" scheme="http://yoursite.com/categories/%E5%88%86%E7%B1%BB1/%E5%88%86%E7%B1%BB2/"/>
+    
+    
+      <category term="标签2" scheme="http://yoursite.com/tags/%E6%A0%87%E7%AD%BE2/"/>
+    
+      <category term="标签1" scheme="http://yoursite.com/tags/%E6%A0%87%E7%AD%BE1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Egret引擎开发基础（一）</title>
+    <link href="http://yoursite.com/2019/01/07/egret-primary/"/>
+    <id>http://yoursite.com/2019/01/07/egret-primary/</id>
+    <published>2019-01-06T17:25:06.000Z</published>
+    <updated>2019-03-26T11:33:28.878Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="显示图片"><a href="#显示图片" class="headerlink" title="显示图片"></a>显示图片</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var batman:egret.Bitmap = new egret.Bitmap( RES.getRes(&apos;hexo-huaheshang_png&apos;));</span><br><span class="line">batman.x = 0;</span><br><span class="line">batman.y = 20;</span><br><span class="line">this.addChild( batman );</span><br></pre></td></tr></table></figure><h3 id="改变图片显示深度（层级）"><a href="#改变图片显示深度（层级）" class="headerlink" title="改变图片显示深度（层级）"></a>改变图片显示深度（层级）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">var batman:egret.Bitmap = new egret.Bitmap( RES.getRes(&apos;hexo-huaheshang_png&apos;));</span><br><span class="line">   batman.x = 0;</span><br><span class="line">   batman.y = 20;</span><br><span class="line">   this.addChild( batman );</span><br><span class="line"></span><br><span class="line">   var batman1:egret.Bitmap = new egret.Bitmap( RES.getRes(&apos;hexo-huaheshang_png&apos;));</span><br><span class="line">   batman1.x = 60;</span><br><span class="line">   batman1.y = 60;</span><br><span class="line">   this.addChild( batman1 );</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">   var batman2:egret.Bitmap = new egret.Bitmap( RES.getRes(&apos;hexo-huaheshang_png&apos;));</span><br><span class="line">   batman2.x = 120;</span><br><span class="line">   batman2.y = 80;</span><br><span class="line">   this.addChild( batman2 );</span><br><span class="line"></span><br><span class="line">   this.setChildIndex(batman1, this.getChildIndex( batman2 )); // 获取batman2 深度 给batmain1</span><br></pre></td></tr></table></figure><h4 id="Tween-动画"><a href="#Tween-动画" class="headerlink" title="Tween 动画"></a>Tween 动画</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">this.stage.addEventListener(egret.TouchEvent.TOUCH_TAP, () =&gt; &#123;</span><br><span class="line">egret.Tween.get(batman).to(&#123;x: batman1.x&#125;, 300, egret.Ease.circIn )</span><br><span class="line">egret.Tween.get(batman1).to(&#123;x: batman.x&#125;, 300, egret.Ease.circIn )</span><br><span class="line"></span><br><span class="line">egret.Tween.get( batman1 ).to( &#123;scaleX: .4, scaleY:.4, alpha: .3&#125;, 300, egret.Ease.circIn).to(&#123;scaleX: 1, scaleY: 1, alpha: 1&#125;, 300, egret.Ease.circIn)</span><br><span class="line"></span><br><span class="line">&#125;, this);</span><br></pre></td></tr></table></figure><h4 id="声音"><a href="#声音" class="headerlink" title="声音"></a>声音</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var sound:egret.Sound = RES.getRes(&apos;jimp_mp3&apos;); sound.play();</span><br></pre></td></tr></table></figure><h3 id="手册"><a href="#手册" class="headerlink" title="手册"></a>手册</h3><p><a href="http://edn.egret.com/cn/docs/" target="_blank" rel="noopener">文档</a><br><a href="http://edn.egret.com/cn/docs/page/582" target="_blank" rel="noopener">命令行手册</a></p><ul><li>UI扩展库 旧版GUI 新版EUI</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;显示图片&quot;&gt;&lt;a href=&quot;#显示图片&quot; class=&quot;headerlink&quot; title=&quot;显示图片&quot;&gt;&lt;/a&gt;显示图片&lt;/h4&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pr
+      
+    
+    </summary>
+    
+      <category term="Egret" scheme="http://yoursite.com/categories/Egret/"/>
+    
+      <category term="分类2" scheme="http://yoursite.com/categories/Egret/%E5%88%86%E7%B1%BB2/"/>
+    
+    
+      <category term="标签2" scheme="http://yoursite.com/tags/%E6%A0%87%E7%AD%BE2/"/>
+    
+      <category term="标签1" scheme="http://yoursite.com/tags/%E6%A0%87%E7%AD%BE1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>前端开发功能--参考网站统计</title>
+    <link href="http://yoursite.com/2019/01/04/font-end-good-website/"/>
+    <id>http://yoursite.com/2019/01/04/font-end-good-website/</id>
+    <published>2019-01-03T16:45:21.000Z</published>
+    <updated>2019-03-26T11:33:28.878Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://codemirror.net/" target="_blank" rel="noopener">codemirror.net</a></p><blockquote><p>CodeMirror是一个用JavaScript实现的多功能文本编辑器。它专门用于编辑代码，并带有许多语言模式和插件 ，可实现更高级的编辑功能。</p></blockquote><p><a href="https://www.centos.bz/" target="_blank" rel="noopener">Linux运维日志 .centos.bz</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;a href=&quot;https://codemirror.net/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;codemirror.net&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;CodeMirror是一个用JavaScript实现的多功能文本编
+      
+    
+    </summary>
+    
+      <category term="分类1" scheme="http://yoursite.com/categories/%E5%88%86%E7%B1%BB1/"/>
+    
+      <category term="分类2" scheme="http://yoursite.com/categories/%E5%88%86%E7%B1%BB1/%E5%88%86%E7%B1%BB2/"/>
+    
+    
+      <category term="标签2" scheme="http://yoursite.com/tags/%E6%A0%87%E7%AD%BE2/"/>
+    
+      <category term="标签1" scheme="http://yoursite.com/tags/%E6%A0%87%E7%AD%BE1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>经查-- git使用报错及解决办法</title>
+    <link href="http://yoursite.com/2018/12/31/git-error/"/>
+    <id>http://yoursite.com/2018/12/31/git-error/</id>
+    <published>2018-12-31T08:14:34.000Z</published>
+    <updated>2019-03-26T11:33:28.878Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="git-push-错误"><a href="#git-push-错误" class="headerlink" title="git push 错误 "></a>git push 错误 <figure class="highlight plain"><figcaption><span>failed to push some refs to 'git@github.com:charblus/ ...' ```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&gt; 本地和远程的文件应该合并后才能上传本地的新文件</span><br><span class="line">解决办法1： 先拉(pull)后推(push)  </span><br><span class="line">解决办法2： 导致这种报错2是因为没有git add 就去提交空，一般因为这个出现这个问题，此报错上还有一行: `error: src refspec master does not match any.`</span><br><span class="line"></span><br><span class="line">### git pull 错误 ``` fatal: refusing to merge unrelated histories</span><br></pre></td></tr></table></figure></h3><blockquote><p>更新代码失败<br><code>git pull origin master --allow-unrelated-histories</code><br>后面加上 –allow-unrelated-histories ， 把两段不相干的 分支进行强行合并</p></blockquote><p><code>git add .</code> &amp;&amp; <code>git commit -m &quot;***&quot;</code> &amp;&amp; <code>git push origin master</code><br><a href="http://stackoverflow.com/questions/37937984/git-refusing-to-merge-unrelated-histories" target="_blank" rel="noopener">cankao</a></p><h3 id="git-branch-错误-fatal-Not-a-valid-object-name-39-master-39"><a href="#git-branch-错误-fatal-Not-a-valid-object-name-39-master-39" class="headerlink" title="git branch 错误 fatal: Not a valid object name: &#39;master&#39;."></a>git branch 错误 <code>fatal: Not a valid object name: &#39;master&#39;.</code></h3><p>git项目下没有任何文件可以commit，或没有新项目没有一次commit ,是不能创建分支的；只有先commit之后才会真正建立master分支，此时才可以建立其它分支。</p><p>由于刚创建的git仓库默认的master分支要在第一次有效的commit之后（可以先不push）才会真正建立，否则就像你声明了个对象但没初始化一样。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;git-push-错误&quot;&gt;&lt;a href=&quot;#git-push-错误&quot; class=&quot;headerlink&quot; title=&quot;git push 错误 &quot;&gt;&lt;/a&gt;git push 错误 &lt;figure class=&quot;highlight plain&quot;&gt;&lt;figcapt
+      
+    
+    </summary>
+    
+      <category term="git" scheme="http://yoursite.com/categories/git/"/>
+    
+      <category term="工具" scheme="http://yoursite.com/categories/git/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="git" scheme="http://yoursite.com/tags/git/"/>
+    
+      <category term="工具" scheme="http://yoursite.com/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>windows 常用快捷键和dos命令</title>
+    <link href="http://yoursite.com/2018/12/31/windows-cmd/"/>
+    <id>http://yoursite.com/2018/12/31/windows-cmd/</id>
+    <published>2018-12-30T21:27:26.000Z</published>
+    <updated>2019-03-26T11:33:28.881Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h3><p>win + R 打开dos命令行窗口<br>win + E 打开资源管理窗口 （计算机）</p><p>shift + 鼠标右击  + select 在此处打开命令窗口   可在资源管理目录下打开dos命令</p><h4 id="windows下chrome-快捷键"><a href="#windows下chrome-快捷键" class="headerlink" title="windows下chrome 快捷键"></a>windows下chrome 快捷键</h4><p>ctrl + E   地址栏foucs搜索(默认搜索引擎) </p><h2 id="常用dos命令"><a href="#常用dos命令" class="headerlink" title="常用dos命令"></a>常用dos命令</h2><blockquote><p>win键 + R  点击确定，打开命令行窗口 或 运行的设置窗口，在输入栏里输入cmd，然后点击确定</p></blockquote><blockquote><p>注： mac 和linux 目录都是 c:/dev/nvm  而windows 是 c:\dev\nvm</p></blockquote><h3 id="del-删除"><a href="#del-删除" class="headerlink" title="del 删除"></a>del 删除</h3><p><code>del /?</code>   // 查看删除帮助<br><code>del c:\settings.txt</code>     // 删除指定文件<br><code>del /F /S /Q c:\dev</code>      // 删除文件夹</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/P            删除每一个文件之前提示确认。</span><br><span class="line">/F            强制删除只读文件。</span><br><span class="line">/S            删除所有子目录中的指定的文件。</span><br><span class="line">/Q            安静模式。删除全局通配符时，不要求确认</span><br><span class="line">/A            根据属性选择要删除的文件</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;快捷键&quot;&gt;&lt;a href=&quot;#快捷键&quot; class=&quot;headerlink&quot; title=&quot;快捷键&quot;&gt;&lt;/a&gt;快捷键&lt;/h3&gt;&lt;p&gt;win + R 打开dos命令行窗口&lt;br&gt;win + E 打开资源管理窗口 （计算机）&lt;/p&gt;
+&lt;p&gt;shift + 鼠标右击  
+      
+    
+    </summary>
+    
+      <category term="windows" scheme="http://yoursite.com/categories/windows/"/>
+    
+      <category term="工具" scheme="http://yoursite.com/categories/windows/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="工具" scheme="http://yoursite.com/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+      <category term="命令行" scheme="http://yoursite.com/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Serverless services -- 无服务器服务</title>
+    <link href="http://yoursite.com/2018/12/27/Serverless-services/"/>
+    <id>http://yoursite.com/2018/12/27/Serverless-services/</id>
+    <published>2018-12-26T18:15:54.000Z</published>
+    <updated>2019-03-26T11:33:28.877Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>Serverless被翻译为“无服务器架构”，这个概念在2012年时便已经存在，比微服务和Service Mesh的概念出现都要早，但是直到微服务概念大红大紫之后，Serverless才重新又被人们所关注。</p></blockquote><blockquote><p>Serverless（无服务器架构）并不意味着没有任何服务器去运行代码，Serverless是无需管理服务器，只需要关注代码，而提供者将处理其余部分工作。“无服务器架构”也可以指部分服务器端逻辑依然由应用程序开发者来编写的应用程序，但与传统架构的不同之处在于，这些逻辑运行在完全由第三方管理，由事件触发的无状态（Stateless）暂存于计算容器内。</p></blockquote><p>对于开发者来说，Serverless架构可以将其服务器端应用程序分解成多个执行不同任务的函数，整个应用分为几个独立、松散耦合的组件，这些组件可以在任何规模上运行。</p><h3 id="Serverless架构优势"><a href="#Serverless架构优势" class="headerlink" title="Serverless架构优势"></a>Serverless架构优势</h3><p><strong>缩短交付时间：</strong> Serverless架构允许开发人员在极短时间内（几小时、几天）交付新的应用程序，而不是像以前一样需要几个星期或几个月。在新的应用程序中，依赖于第三方API提供服务的例子很多，如认证(OAuth)、社交、地图、人工智能等。</p><p><strong>增强可伸缩性：</strong>所有人都希望自己开发的应用能够快速获取大量的新增用户，但是当活跃用户快速增长的时候，服务器的压力也会激增。使用Serverless架构的体系不再有上述担忧，可以及时、灵活进行扩展来应对快速增长的活跃用户带来的访问压力。</p><p><strong>降低成本：</strong> Serverless架构模式可以降低计算能力和人力资源方面的成本，如果不需要服务器，就不用花费时间重新造轮子、风险监测、图像处理，以及基础设施管理，操作成本会直线下降。</p><p><strong>改善用户体验：</strong> 用户通常不太关心基础设施，而更注重于功能和用户体验。Serverless架构允许团队将资源集中在用户体验上。</p><p><strong>减少延迟及优化地理位置信息：</strong>应用规模能力取决于三个方面：用户数量、所在位置及网络延迟。当应用要面向全国甚至全球用户的时候，通常会产生较高的延迟，从而降低用户体验。在Serverless架构下，供应商在每个用户附近都有节点，大幅度降低了访问延迟，因此所有用户的体验都可以得到提升。</p><blockquote><p>在微服务与容器技术火热之后，Serverless（无服务器架构）成为新的热点，无服务器云函数可以让用户无需关心服务器的部署运营，只需开发最核心的业务逻辑，即可实现上线运营，具备分布容灾能力，可以依据负载自动扩缩容，并按照实际调用次数与时长计费。</p></blockquote><p>使用Serverless架构可以免除所有运维性操作，开发人员可以更加专注于核心业务的开发，实现快速上线和迭代，把握业务发展的节奏。Serverless架构可以认为是对微服务和容器化的一种补充，为用户提供了一种新的选择，来应对复杂多变的需求，尤其适合快速发展的初创型公司。</p><ul><li>国外:  firebase</li><li>国内:  阿里百川  友盟</li></ul><p>文章<br><a href="https://blog.csdn.net/m0_37529303/article/details/80878654" target="_blank" rel="noopener">Angular &amp;&amp; Serverless</a> </p><p><a href="https://www.jianshu.com/p/eeb760c63a53" target="_blank" rel="noopener">Google FireBase的简单介绍和使用</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;Serverless被翻译为“无服务器架构”，这个概念在2012年时便已经存在，比微服务和Service Mesh的概念出现都要早，但是直到微服务概念大红大紫之后，Serverless才重新又被人们所关注。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;b
+      
+    
+    </summary>
+    
+      <category term="后端" scheme="http://yoursite.com/categories/%E5%90%8E%E7%AB%AF/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>node包管理工具--nvm</title>
+    <link href="http://yoursite.com/2018/12/27/node-nvm/"/>
+    <id>http://yoursite.com/2018/12/27/node-nvm/</id>
+    <published>2018-12-26T18:04:27.000Z</published>
+    <updated>2019-03-26T11:33:28.880Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>mac 用nvm 管理node版本; (直接使用npm安装nrm, 不需要其他配置)<br>windows 安装nvw-windows 使用nvm工具； </p></blockquote><h4 id="windows使用nvm-noinstall-zip安装"><a href="#windows使用nvm-noinstall-zip安装" class="headerlink" title="windows使用nvm-noinstall.zip安装"></a>windows使用nvm-noinstall.zip安装</h4><blockquote><p>nvm-noinstall.zip 这个是绿色免安装版本，但是使用之前需要配置</p><ol><li><a href="https://github.com/coreybutler/nvm-windows/releases" target="_blank" rel="noopener">nvm-windows 下载</a><br>下载最新版本 Assets下 nvm-noinstall.zip文件</li></ol></blockquote><ol start="2"><li><p>把nvm_noinstall.zip解压到比如 <code>C:/dev/nvm</code> 中(其它盘也可以)；</p></li><li><p>右键以管理员的身份运行install.cmd . 直接按回车,在C盘根目录下会生成一个settins,txt.并拷贝到C:/dev/nvm.修改内容:</p></li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">root: C:\dev\nvm</span><br><span class="line">path: C:\dev\nodejs</span><br><span class="line">arch: 64</span><br><span class="line">proxy: none</span><br><span class="line">node_mirror: http://npm.taobao.org/mirrors/node/</span><br><span class="line">npm_mirror: https://npm.taobao.org/mirrors/npm/</span><br></pre></td></tr></table></figure><blockquote><p>root 配置为当前nvm.exe所在的目录；<br>path 配置为node快捷方式所在的目录；<br>arch 配置为当前操作系统的位数（32/64）；<br>proxy 表示代理，一般不用配置，有的直接设置为none；<br>使用nvm install 8.11.1 下载node v8.11.1 版本，可能网速慢或者需要翻墙导致error下载失败，这里配置使用淘宝node镜像node_mirror和淘宝npm镜像npm_mirror</p></blockquote><ol start="4"><li><p>配置环境变量<br>打开‘控制面板主页-&gt;高级系统设置-&gt;高级-&gt;环境变量’后会有‘用户变量’和‘系统变量’两个选项，建议在‘用户变量’里面设置:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">变量名: NVM_HOME    变量值: C:\dev\nvm</span><br><span class="line">变量名: NVM_SYMLINK 变量值: C:\dev\nodejs</span><br><span class="line">变量名: PATH:       变量值: %NVM_HOME%;%NVM_SYMLINK%  (在PATH的最后添加%NVM_HOME%;%NVM_SYMLINK%)</span><br></pre></td></tr></table></figure></li><li><p>npm 相关配置</p><ul><li>npm全局安装<ul><li><code>npm config set prefix &quot;c:\dev\nvm\npm&quot;</code>  配置用npm下载包时全局安装的包路径</li></ul></li><li>配置npm环境变量<ul><li>变量名: NPM_HOME 变量值: c:\dev\nvm\npm (一定要放在NVM_SYMLINK之前;第4步：在PATH的最后添加%NVM_HOME%;%NPM_HOME%;%NVM_SYMLINK%);</li></ul></li></ul></li><li><p>nrm 安装和使用<br>直接下载： <code>npm install –g nrm</code><br>镜像下载： <code>npm install nrm –g --registry=https://registry.npm.taobao.org</code></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nrm ls         // 列出所有镜像(下载源)</span><br><span class="line">nrm use taobao     // 选择使用淘宝镜像</span><br></pre></td></tr></table></figure></li><li><p>nvm 使用</p><ul><li><code>nvm list</code> 列出所有已经安装的nodejs版本</li><li><code>nvm install lastest</code> 下载最新版本的nodejs</li><li><code>nvm install 8.11.1</code> 下载版本为v8.11.1的nodejs</li><li><code>nvm use 8.11.1</code>   使用指定版本 为v8.11.1的nodejs (注意：如果操作系统为32位的，使用nvm use [版本号] 命令时，后面要加上32。也就是nvm use 8.11.1 32 ）</li><li><code>nvm ls available</code> 查看可用的（可下载的）全部node版本</li></ul><blockquote><p><code>node -v</code> 查看nodejs的版本号</p></blockquote></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;mac 用nvm 管理node版本; (直接使用npm安装nrm, 不需要其他配置)&lt;br&gt;windows 安装nvw-windows 使用nvm工具； &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&quot;windows使用nvm-noinsta
+      
+    
+    </summary>
+    
+      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="工具" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="前端" scheme="http://yoursite.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="node" scheme="http://yoursite.com/tags/node/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo blog使用指南</title>
+    <link href="http://yoursite.com/2018/12/27/hello-world/"/>
+    <id>http://yoursite.com/2018/12/27/hello-world/</id>
+    <published>2018-12-26T18:04:27.000Z</published>
+    <updated>2019-03-26T11:33:28.879Z</updated>
+    
+    <content type="html"><![CDATA[<p>What?<br>Hexo 是一个快速、简洁且高效的博客框架。可以使用markdown 解析成文章，在几秒内，即可利用靓丽的主题生成静态网页。<br>Why?<br>笔记需要整理<br>How?<br>github 创建 <a href="charblus.github.io">charblus.github.io</a> 项目<br>使用markdown 记录开发笔记和文章<br>日复一日</p><p>链接：<br><a href="https://hexo.io/" target="_blank" rel="noopener">Hexo官方网站</a><br><a href="https://hexo.io/themes/" target="_blank" rel="noopener">Hexo官方主题</a></p><h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo n <span class="string">"hexo-post"</span></span><br><span class="line">hexo g</span><br><span class="line">hexo s</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure><h3 id="创建一篇文章"><a href="#创建一篇文章" class="headerlink" title="创建一篇文章"></a>创建一篇文章</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="本地启动"><a href="#本地启动" class="headerlink" title="本地启动"></a>本地启动</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="生成静态html"><a href="#生成静态html" class="headerlink" title="生成静态html"></a>生成静态html</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="部署远程服务"><a href="#部署远程服务" class="headerlink" title="部署远程服务"></a>部署远程服务</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p><h3 id="hexo-命令简写"><a href="#hexo-命令简写" class="headerlink" title="hexo 命令简写"></a>hexo 命令简写</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo s == hexo server   用于生成静态文件</span><br><span class="line">hexo g == hexo generate   用于启动服务器，主要用来本地预览</span><br><span class="line">hexo d == hexo deploy    用于将本地文件发布到github等git仓库上</span><br><span class="line">hexo n == hexo new     用于新建一篇名为“my article”的文章 `hexo n “my article”`</span><br></pre></td></tr></table></figure><h3 id="创建菜单"><a href="#创建菜单" class="headerlink" title="创建菜单"></a>创建菜单</h3><ul><li>sourse 添加文件夹 <code>_name</code> , 文件中添加index.md文件</li><li>修改主题的配置文件_config.yml,增加一个标签页菜单</li></ul><h3 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h3><p>   <a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="noopener">https://hexo.io/zh-cn/docs/index.html</a></p><p>   <a href="https://blog.csdn.net/flappy8023/article/details/72453350" target="_blank" rel="noopener">HEXO搭建个人博客</a></p><p>   <a href="http://www.cnblogs.com/cherishzy/p/5694658.html" target="_blank" rel="noopener">在Github上面搭建Hexo博客（一）：部署到Github</a></p><p>   <a href="https://blog.csdn.net/chwshuang/article/details/52350518" target="_blank" rel="noopener">Hexo在Github中搭建博客系统(4)建菜单写文章</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;What?&lt;br&gt;Hexo 是一个快速、简洁且高效的博客框架。可以使用markdown 解析成文章，在几秒内，即可利用靓丽的主题生成静态网页。&lt;br&gt;Why?&lt;br&gt;笔记需要整理&lt;br&gt;How?&lt;br&gt;github 创建 &lt;a href=&quot;charblus.github.i
+      
+    
+    </summary>
+    
+      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="前端" scheme="http://yoursite.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>git基本配置及使用</title>
+    <link href="http://yoursite.com/2018/12/25/git/"/>
+    <id>http://yoursite.com/2018/12/25/git/</id>
+    <published>2018-12-25T01:23:27.000Z</published>
+    <updated>2019-03-26T11:33:28.879Z</updated>
+    
+    <content type="html"><![CDATA[<p>Git是分布式的代码管理工具，远程的代码管理是基于SSH的，所以要使用远程的Git则需要SSH的配置。</p><p>git 命令<br>[TOC]</p><h3 id="设置git"><a href="#设置git" class="headerlink" title="设置git"></a>设置git</h3><ul><li><p>基本配置</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name &quot;charblus&quot;</span><br><span class="line">$ git config --global user.email &quot;charblus7582@gmail.com&quot;</span><br></pre></td></tr></table></figure></li><li><p>生成ssh 密钥</p></li></ul><ol><li>查看是否已经有了ssh密钥：<code>cd ~/.ssh</code> ; 如果没有密钥则不会有此文件夹，有则备份删除</li><li>生成密钥  （<a href="mailto:email@email.com" target="_blank" rel="noopener">email@email.com</a>是github的账号，即上面的email）<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C “email@email.com”</span><br></pre></td></tr></table></figure></li></ol><blockquote><p>按3个回车，密码为空； 如果不执行第一步或没有删除：第一个回车后会出现coverage 提示你是否覆盖文件 yes/no；最后得到了两个文件：id_rsa和id_rsa.pub</p></blockquote><h3 id="git-remote"><a href="#git-remote" class="headerlink" title="git remote"></a>git remote</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git remote 不带参数，列出已经存在的远程分支</span><br><span class="line">git remote -v | --verbose 列出详细信息，在每一个名字后面列出其远程url</span><br><span class="line">git remote add origin ssh://***.git   添加远程仓库</span><br><span class="line">git remote show origin  显示远程信息</span><br></pre></td></tr></table></figure><h3 id="git-flow"><a href="#git-flow" class="headerlink" title="git-flow"></a>git-flow</h3><blockquote><p>git-flow 是一个 git 扩展集，按 Vincent Driessen 的分支模型提供高层次的库操作<br><a href="http://danielkummer.github.io/git-flow-cheatsheet/index.zh_CN.html" target="_blank" rel="noopener">git-flow 备忘清单</a></p></blockquote><h3 id="git-merge-与-git-rebase"><a href="#git-merge-与-git-rebase" class="headerlink" title="git merge 与 git rebase"></a>git merge 与 git rebase</h3><ul><li>git merge 和 git rebase 都是将远程分支与本地分支合并的一种方法，git merge 会生成一个新的节点，例如A和B都位于同一个HEAD，A提交了2个commit C1和C2，B 提交了2个commit C3和C4，git merge的结果是在C3和C4之后合并生成C5，这样提交历史比较清晰，但多了一个C5</li><li>假设A已经将C1和C2 push到了远程分支，那么B 使用git rebase则会将C3和C4缓存到.git/rebase中，恢复到之前的状态，更新C1和C2，然后再将C3和C4作为补丁应用到C2的状态上。结果如下：<br>原始状态 <code>-&gt;C1-&gt;C2-&gt;C3&#39;-&gt;C4&#39;</code>，C3’和C4’为git 根据C3和C4生成的补丁，log是一条直线，而且没有多余的C5，但是平行信息丢失。<br><a href="https://stackoverflow.com/questions/18930527/difference-between-git-pull-and-git-pull-rebase" target="_blank" rel="noopener">git pull和git pull –rebase之间的区别</a></li></ul><h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="noopener">廖雪峰git教程</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Git是分布式的代码管理工具，远程的代码管理是基于SSH的，所以要使用远程的Git则需要SSH的配置。&lt;/p&gt;
+&lt;p&gt;git 命令&lt;br&gt;[TOC]&lt;/p&gt;
+&lt;h3 id=&quot;设置git&quot;&gt;&lt;a href=&quot;#设置git&quot; class=&quot;headerlink&quot; title=&quot;
+      
+    
+    </summary>
+    
+      <category term="工具" scheme="http://yoursite.com/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+      <category term="前端" scheme="http://yoursite.com/categories/%E5%B7%A5%E5%85%B7/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="前端" scheme="http://yoursite.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="git" scheme="http://yoursite.com/tags/git/"/>
+    
+  </entry>
+  
+</feed>
